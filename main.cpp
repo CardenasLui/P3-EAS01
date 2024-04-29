@@ -20,10 +20,16 @@ int main()
         {
             if (event.type == Event::Closed)
                 window.close();
-
             /** (5pts)
                 Cuando se de click izquierdo, se deberá actualizar el objetivo del cuadrado a la posición del mouse.
             */
+           if(event.type == Event::MouseButtonPressed){
+             if(event::mouseButton.button == Mouse::Left){
+                   
+                   rect.setObjective(Vector2f(Mouse::getPosition(window)));
+                   rect.update();
+                 };
+            }
 
         }
 
